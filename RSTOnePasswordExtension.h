@@ -46,9 +46,9 @@
 // conflicts for adopters of your library, you should rename the OnePasswordExtension class.
 // You might to so by adding your own project prefix, e.g., MyLibraryOnePasswordExtension.
 
-@interface OnePasswordExtension : NSObject
+@interface RSTOnePasswordExtension : NSObject
 
-+ (OnePasswordExtension *)sharedExtension;
++ (RSTOnePasswordExtension *)sharedExtension;
 
 /*!
  Determines if the 1Password Extension is available. Allows you to only show the 1Password login button to those

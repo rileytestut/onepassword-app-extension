@@ -7,7 +7,7 @@
 //
 
 #import "RegisterViewController.h"
-#import "OnePasswordExtension.h"
+#import "RSTOnePasswordExtension.h"
 #import "LoginInformation.h"
 
 @interface RegisterViewController () <UITextFieldDelegate>
@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
 	[self.view setBackgroundColor:[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"register-background.png"]]];
-	[self.onepasswordSignupButton setHidden:![[OnePasswordExtension sharedExtension] isAppExtensionAvailable]];
+	[self.onepasswordSignupButton setHidden:![[RSTOnePasswordExtension sharedExtension] isAppExtensionAvailable]];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
@@ -54,7 +54,7 @@
 
 	__weak typeof (self) miniMe = self;
 
-	[[OnePasswordExtension sharedExtension] storeLoginForURLString:@"https://www.acme.com" loginDetails:newLoginDetails passwordGenerationOptions:passwordGenerationOptions forViewController:self sender:sender completion:^(NSDictionary *loginDict, NSError *error) {
+	[[RSTOnePasswordExtension sharedExtension] storeLoginForURLString:@"https://www.acme.com" loginDetails:newLoginDetails passwordGenerationOptions:passwordGenerationOptions forViewController:self sender:sender completion:^(NSDictionary *loginDict, NSError *error) {
 
 		if (!loginDict) {
 			if (error.code != AppExtensionErrorCodeCancelledByUser) {

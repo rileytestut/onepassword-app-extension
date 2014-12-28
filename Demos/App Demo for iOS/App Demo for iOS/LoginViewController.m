@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#import "OnePasswordExtension.h"
+#import "RSTOnePasswordExtension.h"
 #import "LoginInformation.h"
 
 @interface LoginViewController () <UITextFieldDelegate>
@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
 	[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
 	[self.view setBackgroundColor:[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"login-background.png"]]];
-	[self.onepasswordSigninButton setHidden:![[OnePasswordExtension sharedExtension] isAppExtensionAvailable]];
+	[self.onepasswordSigninButton setHidden:![[RSTOnePasswordExtension sharedExtension] isAppExtensionAvailable]];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
@@ -34,7 +34,7 @@
 
 - (IBAction)findLoginFrom1Password:(id)sender {
 	__weak typeof (self) miniMe = self;
-	[[OnePasswordExtension sharedExtension] findLoginForURLString:@"https://www.acme.com" forViewController:self sender:sender completion:^(NSDictionary *loginDict, NSError *error) {
+	[[RSTOnePasswordExtension sharedExtension] findLoginForURLString:@"https://www.acme.com" forViewController:self sender:sender completion:^(NSDictionary *loginDict, NSError *error) {
 		if (!loginDict) {
 			if (error.code != AppExtensionErrorCodeCancelledByUser) {
 				NSLog(@"Error invoking 1Password App Extension for find login: %@", error);

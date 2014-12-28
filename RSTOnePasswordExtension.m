@@ -5,7 +5,7 @@
 //  Copyright (c) 2014 AgileBits. All rights reserved.
 //
 
-#import "OnePasswordExtension.h"
+#import "RSTOnePasswordExtension.h"
 
 // Version
 #define VERSION_NUMBER @(110)
@@ -21,16 +21,16 @@ static NSString *const kUTTypeAppExtensionFillWebViewAction = @"org.appextension
 static NSString *const AppExtensionWebViewPageFillScript = @"fillScript";
 static NSString *const AppExtensionWebViewPageDetails = @"pageDetails";
 
-@implementation OnePasswordExtension
+@implementation RSTOnePasswordExtension
 
 #pragma mark - Public Methods
 
-+ (OnePasswordExtension *)sharedExtension {
++ (RSTOnePasswordExtension *)sharedExtension {
 	static dispatch_once_t onceToken;
-	static OnePasswordExtension *__sharedExtension;
+	static RSTOnePasswordExtension *__sharedExtension;
 
 	dispatch_once(&onceToken, ^{
-		__sharedExtension = [OnePasswordExtension new];
+		__sharedExtension = [RSTOnePasswordExtension new];
 	});
 	
 	return __sharedExtension;
@@ -59,7 +59,7 @@ static NSString *const AppExtensionWebViewPageDetails = @"pageDetails";
 	if (![self isSystemAppExtensionAPIAvailable]) {
 		NSLog(@"Failed to findLoginForURLString, system API is not available");
 		if (completion) {
-			completion(nil, [OnePasswordExtension systemAppExtensionAPINotAvailableError]);
+			completion(nil, [RSTOnePasswordExtension systemAppExtensionAPINotAvailableError]);
 		}
 
 		return;
@@ -77,10 +77,10 @@ static NSString *const AppExtensionWebViewPageDetails = @"pageDetails";
 			NSError *error = nil;
 			if (activityError) {
 				NSLog(@"Failed to findLoginForURLString: %@", activityError);
-				error = [OnePasswordExtension failedToContactExtensionErrorWithActivityError:activityError];
+				error = [RSTOnePasswordExtension failedToContactExtensionErrorWithActivityError:activityError];
 			}
 			else {
-				error = [OnePasswordExtension extensionCancelledByUserError];
+				error = [RSTOnePasswordExtension extensionCancelledByUserError];
 			}
 
 			if (completion) {
@@ -106,7 +106,7 @@ static NSString *const AppExtensionWebViewPageDetails = @"pageDetails";
 	if (![self isSystemAppExtensionAPIAvailable]) {
 		NSLog(@"Failed to storeLoginForURLString, system API is not available");
 		if (completion) {
-			completion(nil, [OnePasswordExtension systemAppExtensionAPINotAvailableError]);
+			completion(nil, [RSTOnePasswordExtension systemAppExtensionAPINotAvailableError]);
 		}
 
 		return;
@@ -125,10 +125,10 @@ static NSString *const AppExtensionWebViewPageDetails = @"pageDetails";
 			NSError *error = nil;
 			if (activityError) {
 				NSLog(@"Failed to storeLoginForURLString: %@", activityError);
-				error = [OnePasswordExtension failedToContactExtensionErrorWithActivityError:activityError];
+				error = [RSTOnePasswordExtension failedToContactExtensionErrorWithActivityError:activityError];
 			}
 			else {
-				error = [OnePasswordExtension extensionCancelledByUserError];
+				error = [RSTOnePasswordExtension extensionCancelledByUserError];
 			}
 
 			if (completion) {
@@ -153,7 +153,7 @@ static NSString *const AppExtensionWebViewPageDetails = @"pageDetails";
 	if (![self isSystemAppExtensionAPIAvailable]) {
 		NSLog(@"Failed to changePasswordForLoginWithUsername, system API is not available");
 		if (completion) {
-			completion(nil, [OnePasswordExtension systemAppExtensionAPINotAvailableError]);
+			completion(nil, [RSTOnePasswordExtension systemAppExtensionAPINotAvailableError]);
 		}
 
 		return;
@@ -176,10 +176,10 @@ static NSString *const AppExtensionWebViewPageDetails = @"pageDetails";
 			NSError *error = nil;
 			if (activityError) {
 				NSLog(@"Failed to changePasswordForLoginWithUsername: %@", activityError);
-				error = [OnePasswordExtension failedToContactExtensionErrorWithActivityError:activityError];
+				error = [RSTOnePasswordExtension failedToContactExtensionErrorWithActivityError:activityError];
 			}
 			else {
-				error = [OnePasswordExtension extensionCancelledByUserError];
+				error = [RSTOnePasswordExtension extensionCancelledByUserError];
 			}
 
 			if (completion) {
@@ -302,7 +302,7 @@ static NSString *const AppExtensionWebViewPageDetails = @"pageDetails";
 - (void)processReturnedItems:(NSArray *)returnedItems completion:(void (^)(NSDictionary *loginDict, NSError *))completion {
 	if (returnedItems.count == 0) {
 		if (completion) {
-			NSError *error = [OnePasswordExtension extensionCancelledByUserError];
+			NSError *error = [RSTOnePasswordExtension extensionCancelledByUserError];
 			completion(nil, error);
 		}
 
@@ -334,7 +334,7 @@ static NSString *const AppExtensionWebViewPageDetails = @"pageDetails";
 			if (!result) {
 				NSLog(@"1Password Extension failed to collect web page fields: %@", error);
 				if (completion) {
-					completion(nil, [OnePasswordExtension failedToCollectFieldsErrorWithUnderlyingError:error]);
+					completion(nil, [RSTOnePasswordExtension failedToCollectFieldsErrorWithUnderlyingError:error]);
 				}
 
 				return;
@@ -365,7 +365,7 @@ static NSString *const AppExtensionWebViewPageDetails = @"pageDetails";
 
 - (void)fillReturnedItems:(NSArray *)returnedItems intoWebView:(id)webView completion:(void (^)(BOOL success, NSError *error))completion {
 	if (returnedItems.count == 0) {
-		NSError *error = [OnePasswordExtension extensionCancelledByUserError];
+		NSError *error = [RSTOnePasswordExtension extensionCancelledByUserError];
 		if (completion) {
 			completion(NO, error);
 		}
@@ -536,7 +536,7 @@ static NSString *const AppExtensionWebViewPageDetails = @"pageDetails";
 		NSError *error = nil;
 		if (!loginDictionary) {
 			NSLog(@"Failed to loadItemForTypeIdentifier: %@", itemProviderError);
-			error = [OnePasswordExtension failedToLoadItemProviderDataErrorWithUnderlyingError:itemProviderError];
+			error = [RSTOnePasswordExtension failedToLoadItemProviderDataErrorWithUnderlyingError:itemProviderError];
 		}
 
 		if (completion) {
@@ -562,7 +562,7 @@ static NSString *const AppExtensionWebViewPageDetails = @"pageDetails";
 		if (!result) {
 			NSLog(@"1Password Extension failed to collect web page fields: %@", error);
 			if (completion) {
-				completion(NO,[OnePasswordExtension failedToCollectFieldsErrorWithUnderlyingError:error]);
+				completion(NO,[RSTOnePasswordExtension failedToCollectFieldsErrorWithUnderlyingError:error]);
 			}
 
 			return;
@@ -589,7 +589,7 @@ static NSString *const AppExtensionWebViewPageDetails = @"pageDetails";
 
 - (void)findLoginIn1PasswordWithURLString:(NSString *)URLString collectedPageDetails:(NSString *)collectedPageDetails forWebViewController:(UIViewController *)forViewController sender:(id)sender withWebView:(id)webView completion:(void (^)(BOOL success, NSError *error))completion {
 	if ([URLString length] == 0) {
-		NSError *URLStringError = [OnePasswordExtension failedToObtainURLStringFromWebViewError];
+		NSError *URLStringError = [RSTOnePasswordExtension failedToObtainURLStringFromWebViewError];
 		NSLog(@"Failed to findLoginIn1PasswordWithURLString: %@", URLStringError);
 		completion(NO, URLStringError);
 	}
@@ -604,10 +604,10 @@ static NSString *const AppExtensionWebViewPageDetails = @"pageDetails";
 			NSError *error = nil;
 			if (activityError) {
 				NSLog(@"Failed to findLoginIn1PasswordWithURLString: %@", activityError);
-				error = [OnePasswordExtension failedToContactExtensionErrorWithActivityError:activityError];
+				error = [RSTOnePasswordExtension failedToContactExtensionErrorWithActivityError:activityError];
 			}
 			else {
-				error = [OnePasswordExtension extensionCancelledByUserError];
+				error = [RSTOnePasswordExtension extensionCancelledByUserError];
 			}
 
 			if (completion) {
@@ -644,7 +644,7 @@ static NSString *const AppExtensionWebViewPageDetails = @"pageDetails";
 	if (!fillScript) {
 		NSLog(@"Failed to executeFillScript, fillScript is missing");
 		if (completion) {
-			completion(NO, [OnePasswordExtension failedToFillFieldsErrorWithLocalizedErrorMessage:NSLocalizedString(@"Failed to fill web page because script is missing", @"1Password Extension Error Message") underlyingError:nil]);
+			completion(NO, [RSTOnePasswordExtension failedToFillFieldsErrorWithLocalizedErrorMessage:NSLocalizedString(@"Failed to fill web page because script is missing", @"1Password Extension Error Message") underlyingError:nil]);
 		}
 
 		return;
@@ -660,7 +660,7 @@ static NSString *const AppExtensionWebViewPageDetails = @"pageDetails";
 
 		if (!success) {
 			NSLog(@"Cannot executeFillScript, stringByEvaluatingJavaScriptFromString failed");
-			error = [OnePasswordExtension failedToFillFieldsErrorWithLocalizedErrorMessage:NSLocalizedString(@"Failed to fill web page because script could not be evaluated", @"1Password Extension Error Message") underlyingError:nil];
+			error = [RSTOnePasswordExtension failedToFillFieldsErrorWithLocalizedErrorMessage:NSLocalizedString(@"Failed to fill web page because script could not be evaluated", @"1Password Extension Error Message") underlyingError:nil];
 		}
 
 		if (completion) {
@@ -678,7 +678,7 @@ static NSString *const AppExtensionWebViewPageDetails = @"pageDetails";
 
 			if (!success) {
 				NSLog(@"Cannot executeFillScript, evaluateJavaScript failed: %@", evaluationError);
-				error = [OnePasswordExtension failedToFillFieldsErrorWithLocalizedErrorMessage:NSLocalizedString(@"Failed to fill web page because script could not be evaluated", @"1Password Extension Error Message") underlyingError:error];
+				error = [RSTOnePasswordExtension failedToFillFieldsErrorWithLocalizedErrorMessage:NSLocalizedString(@"Failed to fill web page because script could not be evaluated", @"1Password Extension Error Message") underlyingError:error];
 			}
 
 			if (completion) {

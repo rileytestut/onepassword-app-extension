@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "OnePasswordExtension.h"
+#import "RSTOnePasswordExtension.h"
 
 #import <MessageUI/MFMailComposeViewController.h>
 
@@ -19,7 +19,7 @@
             
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	if (![[OnePasswordExtension sharedExtension] isAppExtensionAvailable]) {
+	if (![[RSTOnePasswordExtension sharedExtension] isAppExtensionAvailable]) {
 		UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"1Password Beta is not installed" message:@"Email support+appex@agilebits.com for beta access" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Email", nil];
 		[alertView show];
 	}

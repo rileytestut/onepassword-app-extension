@@ -10,7 +10,7 @@
 		C015EF6919992AC70044A194 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C015EF6819992AC70044A194 /* ChangePasswordViewController.m */; };
 		C015EF6C19992DF70044A194 /* LoginInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = C015EF6B19992DF70044A194 /* LoginInformation.m */; };
 		C053E05B19945A45002E80C5 /* 1Password.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C053E05A19945A45002E80C5 /* 1Password.xcassets */; };
-		C0F0C18519889441000B261F /* OnePasswordExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F0C18419889441000B261F /* OnePasswordExtension.m */; };
+		C0F0C18519889441000B261F /* RSTOnePasswordExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F0C18419889441000B261F /* RSTOnePasswordExtension.m */; };
 		C0F0C18819889456000B261F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F0C18719889456000B261F /* AppDelegate.m */; };
 		C0F0C19019889467000B261F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F0C18A19889467000B261F /* LoginViewController.m */; };
 		C0F0C19119889467000B261F /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F0C18C19889467000B261F /* RegisterViewController.m */; };
@@ -26,8 +26,8 @@
 		C015EF6A19992DF70044A194 /* LoginInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginInformation.h; path = "App Demo for iOS/LoginInformation.h"; sourceTree = SOURCE_ROOT; };
 		C015EF6B19992DF70044A194 /* LoginInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginInformation.m; path = "App Demo for iOS/LoginInformation.m"; sourceTree = SOURCE_ROOT; };
 		C053E05A19945A45002E80C5 /* 1Password.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = 1Password.xcassets; path = ../1Password.xcassets; sourceTree = "<group>"; };
-		C0F0C18319889441000B261F /* OnePasswordExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OnePasswordExtension.h; path = ../../OnePasswordExtension.h; sourceTree = SOURCE_ROOT; };
-		C0F0C18419889441000B261F /* OnePasswordExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OnePasswordExtension.m; path = ../../OnePasswordExtension.m; sourceTree = SOURCE_ROOT; };
+		C0F0C18319889441000B261F /* RSTOnePasswordExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSTOnePasswordExtension.h; path = ../../RSTOnePasswordExtension.h; sourceTree = SOURCE_ROOT; };
+		C0F0C18419889441000B261F /* RSTOnePasswordExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSTOnePasswordExtension.m; path = ../../RSTOnePasswordExtension.m; sourceTree = SOURCE_ROOT; };
 		C0F0C18619889456000B261F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "App Demo for iOS/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
 		C0F0C18719889456000B261F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "App Demo for iOS/AppDelegate.m"; sourceTree = SOURCE_ROOT; };
 		C0F0C18919889467000B261F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = "App Demo for iOS/LoginViewController.h"; sourceTree = SOURCE_ROOT; };
@@ -73,8 +73,8 @@
 		C0FA52991974821100570166 /* App Demo for iOS */ = {
 			isa = PBXGroup;
 			children = (
-				C0F0C18319889441000B261F /* OnePasswordExtension.h */,
-				C0F0C18419889441000B261F /* OnePasswordExtension.m */,
+				C0F0C18319889441000B261F /* RSTOnePasswordExtension.h */,
+				C0F0C18419889441000B261F /* RSTOnePasswordExtension.m */,
 				C0F0C18619889456000B261F /* AppDelegate.h */,
 				C0F0C18719889456000B261F /* AppDelegate.m */,
 				C0F0C18919889467000B261F /* LoginViewController.h */,
@@ -178,7 +178,7 @@
 				C0F0C19019889467000B261F /* LoginViewController.m in Sources */,
 				C0F0C19219889467000B261F /* ThankYouViewController.m in Sources */,
 				C0F0C19119889467000B261F /* RegisterViewController.m in Sources */,
-				C0F0C18519889441000B261F /* OnePasswordExtension.m in Sources */,
+				C0F0C18519889441000B261F /* RSTOnePasswordExtension.m in Sources */,
 				C015EF6C19992DF70044A194 /* LoginInformation.m in Sources */,
 				C0F0C19C198894F8000B261F /* main.m in Sources */,
 				C015EF6919992AC70044A194 /* ChangePasswordViewController.m in Sources */,

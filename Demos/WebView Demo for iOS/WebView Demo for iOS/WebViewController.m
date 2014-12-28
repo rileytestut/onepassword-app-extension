@@ -8,7 +8,7 @@
 
 #import "WebViewController.h"
 
-#import "OnePasswordExtension.h"
+#import "RSTOnePasswordExtension.h"
 
 @interface WebViewController() <UISearchBarDelegate, WKNavigationDelegate>
 
@@ -24,7 +24,7 @@
 #pragma mark - Life Cycle
 
 - (void)viewDidLoad {
-	[self.onepasswordFillButton setHidden:![[OnePasswordExtension sharedExtension] isAppExtensionAvailable]];
+	[self.onepasswordFillButton setHidden:![[RSTOnePasswordExtension sharedExtension] isAppExtensionAvailable]];
 
 	WKWebViewConfiguration *configuration = [WKWebViewConfiguration new];
 	self.webView = [[WKWebView alloc] initWithFrame:self.webViewContainer.bounds configuration:configuration];
@@ -40,7 +40,7 @@
 #pragma mark - Actions
 
 - (IBAction)fillUsing1Password:(id)sender {
-	[[OnePasswordExtension sharedExtension] fillLoginIntoWebView:self.webView forViewController:self sender:sender completion:^(BOOL success, NSError *error) {
+	[[RSTOnePasswordExtension sharedExtension] fillLoginIntoWebView:self.webView forViewController:self sender:sender completion:^(BOOL success, NSError *error) {
 		if (!success) {
 			NSLog(@"Failed to fill login in webview: <%@>", error);
 		}

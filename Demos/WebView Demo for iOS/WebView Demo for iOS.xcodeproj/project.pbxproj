@@ -10,7 +10,7 @@
 		C04CEC4A19887A9C00673F85 /* 1Password.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C04CEC4919887A9C00673F85 /* 1Password.xcassets */; };
 		C0F0C1A21988954E000B261F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F0C19F1988954E000B261F /* AppDelegate.m */; };
 		C0F0C1A31988954E000B261F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F0C1A11988954E000B261F /* WebViewController.m */; };
-		C0F0C1A61988955C000B261F /* OnePasswordExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F0C1A51988955C000B261F /* OnePasswordExtension.m */; };
+		C0F0C1A61988955C000B261F /* RSTOnePasswordExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F0C1A51988955C000B261F /* RSTOnePasswordExtension.m */; };
 		C0F0C1A8198895A4000B261F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0F0C1A7198895A4000B261F /* Images.xcassets */; };
 		C0F0C1AC198895C8000B261F /* welcome.html in Resources */ = {isa = PBXBuildFile; fileRef = C0F0C1AB198895C8000B261F /* welcome.html */; };
 		C0F0C1AF198895F6000B261F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F0C1AD198895F6000B261F /* Main.storyboard */; };
@@ -24,8 +24,8 @@
 		C0F0C19F1988954E000B261F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "WebView Demo for iOS/AppDelegate.m"; sourceTree = SOURCE_ROOT; };
 		C0F0C1A01988954E000B261F /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = "WebView Demo for iOS/WebViewController.h"; sourceTree = SOURCE_ROOT; };
 		C0F0C1A11988954E000B261F /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = "WebView Demo for iOS/WebViewController.m"; sourceTree = SOURCE_ROOT; };
-		C0F0C1A41988955C000B261F /* OnePasswordExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OnePasswordExtension.h; path = ../../OnePasswordExtension.h; sourceTree = SOURCE_ROOT; };
-		C0F0C1A51988955C000B261F /* OnePasswordExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OnePasswordExtension.m; path = ../../OnePasswordExtension.m; sourceTree = SOURCE_ROOT; };
+		C0F0C1A41988955C000B261F /* RSTOnePasswordExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSTOnePasswordExtension.h; path = ../../RSTOnePasswordExtension.h; sourceTree = SOURCE_ROOT; };
+		C0F0C1A51988955C000B261F /* RSTOnePasswordExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSTOnePasswordExtension.m; path = ../../RSTOnePasswordExtension.m; sourceTree = SOURCE_ROOT; };
 		C0F0C1A7198895A4000B261F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "WebView Demo for iOS/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		C0F0C1AB198895C8000B261F /* welcome.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = welcome.html; path = "WebView Demo for iOS/welcome.html"; sourceTree = SOURCE_ROOT; };
 		C0F0C1AE198895F6000B261F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "WebView Demo for iOS/Base.lproj/Main.storyboard"; sourceTree = SOURCE_ROOT; };
@@ -63,8 +63,8 @@
 		C0169CD7197D6C3C006E7618 /* WebView Demo for iOS */ = {
 			isa = PBXGroup;
 			children = (
-				C0F0C1A41988955C000B261F /* OnePasswordExtension.h */,
-				C0F0C1A51988955C000B261F /* OnePasswordExtension.m */,
+				C0F0C1A41988955C000B261F /* RSTOnePasswordExtension.h */,
+				C0F0C1A51988955C000B261F /* RSTOnePasswordExtension.m */,
 				C0F0C19E1988954E000B261F /* AppDelegate.h */,
 				C0F0C19F1988954E000B261F /* AppDelegate.m */,
 				C0F0C1A01988954E000B261F /* WebViewController.h */,
@@ -160,7 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0F0C1B319889604000B261F /* main.m in Sources */,
-				C0F0C1A61988955C000B261F /* OnePasswordExtension.m in Sources */,
+				C0F0C1A61988955C000B261F /* RSTOnePasswordExtension.m in Sources */,
 				C0F0C1A31988954E000B261F /* WebViewController.m in Sources */,
 				C0F0C1A21988954E000B261F /* AppDelegate.m in Sources */,
 			);

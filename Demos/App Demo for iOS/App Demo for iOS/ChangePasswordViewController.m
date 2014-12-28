@@ -7,7 +7,7 @@
 //
 
 #import "ChangePasswordViewController.h"
-#import "OnePasswordExtension.h"
+#import "RSTOnePasswordExtension.h"
 #import "LoginInformation.h"
 
 @interface ChangePasswordViewController ()
@@ -25,7 +25,7 @@
 	[super viewDidLoad];
 	[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
 	[self.view setBackgroundColor:[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"login-background.png"]]];
-	[self.onepasswordSigninButton setHidden:![[OnePasswordExtension sharedExtension] isAppExtensionAvailable]];
+	[self.onepasswordSigninButton setHidden:![[RSTOnePasswordExtension sharedExtension] isAppExtensionAvailable]];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
@@ -67,7 +67,7 @@
 
 	__weak typeof (self) miniMe = self;
 
-	[[OnePasswordExtension sharedExtension] changePasswordForLoginForURLString:@"https://www.acme.com" loginDetails:loginDetails passwordGenerationOptions:passwordGenerationOptions forViewController:self sender:sender completion:^(NSDictionary *loginDict, NSError *error) {
+	[[RSTOnePasswordExtension sharedExtension] changePasswordForLoginForURLString:@"https://www.acme.com" loginDetails:loginDetails passwordGenerationOptions:passwordGenerationOptions forViewController:self sender:sender completion:^(NSDictionary *loginDict, NSError *error) {
 		if (!loginDict) {
 			if (error.code != AppExtensionErrorCodeCancelledByUser) {
 				NSLog(@"Error invoking 1Password App Extension for find login: %@", error);

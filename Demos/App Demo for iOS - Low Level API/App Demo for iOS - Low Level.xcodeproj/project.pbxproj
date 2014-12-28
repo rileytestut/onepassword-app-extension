@@ -17,7 +17,7 @@
 		C0A970AF19D39BB60016870A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0A970AD19D39BB60016870A /* Info.plist */; };
 		C0A970B019D39BB60016870A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A970AE19D39BB60016870A /* main.m */; };
 		C0A970B319D39BBF0016870A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A970B119D39BBF0016870A /* Main.storyboard */; };
-		C0F0C18519889441000B261F /* OnePasswordExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F0C18419889441000B261F /* OnePasswordExtension.m */; };
+		C0F0C18519889441000B261F /* RSTOnePasswordExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F0C18419889441000B261F /* RSTOnePasswordExtension.m */; };
 		C0F0C19519889479000B261F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0F0C19419889479000B261F /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -38,8 +38,8 @@
 		C0A970AD19D39BB60016870A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "App Demo for iOS/Info.plist"; sourceTree = SOURCE_ROOT; };
 		C0A970AE19D39BB60016870A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "App Demo for iOS/main.m"; sourceTree = SOURCE_ROOT; };
 		C0A970B219D39BBF0016870A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "App Demo for iOS - Low Level API/App Demo for iOS/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
-		C0F0C18319889441000B261F /* OnePasswordExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OnePasswordExtension.h; path = ../../OnePasswordExtension.h; sourceTree = SOURCE_ROOT; };
-		C0F0C18419889441000B261F /* OnePasswordExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OnePasswordExtension.m; path = ../../OnePasswordExtension.m; sourceTree = SOURCE_ROOT; };
+		C0F0C18319889441000B261F /* RSTOnePasswordExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSTOnePasswordExtension.h; path = ../../RSTOnePasswordExtension.h; sourceTree = SOURCE_ROOT; };
+		C0F0C18419889441000B261F /* RSTOnePasswordExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSTOnePasswordExtension.m; path = ../../RSTOnePasswordExtension.m; sourceTree = SOURCE_ROOT; };
 		C0F0C19419889479000B261F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "App Demo for iOS/App Demo for iOS/Images.xcassets"; sourceTree = "<group>"; };
 		C0FA52971974821100570166 /* App Demo for iOS - Low Level.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App Demo for iOS - Low Level.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,8 +74,8 @@
 		C0FA52991974821100570166 /* App Demo for iOS */ = {
 			isa = PBXGroup;
 			children = (
-				C0F0C18319889441000B261F /* OnePasswordExtension.h */,
-				C0F0C18419889441000B261F /* OnePasswordExtension.m */,
+				C0F0C18319889441000B261F /* RSTOnePasswordExtension.h */,
+				C0F0C18419889441000B261F /* RSTOnePasswordExtension.m */,
 				C0A9709B19D39B960016870A /* AppDelegate.h */,
 				C0A9709C19D39B960016870A /* AppDelegate.m */,
 				C0A9709D19D39B960016870A /* ChangePasswordViewController.h */,
@@ -177,7 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0F0C18519889441000B261F /* OnePasswordExtension.m in Sources */,
+				C0F0C18519889441000B261F /* RSTOnePasswordExtension.m in Sources */,
 				C0A970A819D39B960016870A /* ChangePasswordViewController.m in Sources */,
 				C0A970AA19D39B960016870A /* LoginViewController.m in Sources */,
 				C0A970AB19D39B960016870A /* RegisterViewController.m in Sources */,

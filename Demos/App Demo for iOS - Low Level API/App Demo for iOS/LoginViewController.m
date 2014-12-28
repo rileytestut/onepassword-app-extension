@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#import "OnePasswordExtension.h"
+#import "RSTOnePasswordExtension.h"
 #import "LoginInformation.h"
 
 @interface LoginViewController () <UITextFieldDelegate>
@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
 	[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
 	[self.view setBackgroundColor:[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"login-background.png"]]];
-	[self.onepasswordSigninButton setHidden:![[OnePasswordExtension sharedExtension] isAppExtensionAvailable]];
+	[self.onepasswordSigninButton setHidden:![[RSTOnePasswordExtension sharedExtension] isAppExtensionAvailable]];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
@@ -33,7 +33,7 @@
 #pragma mark - Actions
 
 - (IBAction)findLoginFrom1Password:(id)sender {
-	OnePasswordExtension *onePasswordExtension = [OnePasswordExtension sharedExtension];
+	RSTOnePasswordExtension *onePasswordExtension = [RSTOnePasswordExtension sharedExtension];
 
 	// Create the 1Password extension item.
 	NSExtensionItem *extensionItem = [onePasswordExtension createExtensionItemToFindLoginForURLString:@"https://www.acme.com"];

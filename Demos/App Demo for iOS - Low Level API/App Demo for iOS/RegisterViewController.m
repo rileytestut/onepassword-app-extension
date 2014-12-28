@@ -7,7 +7,7 @@
 //
 
 #import "RegisterViewController.h"
-#import "OnePasswordExtension.h"
+#import "RSTOnePasswordExtension.h"
 #import "LoginInformation.h"
 
 @interface RegisterViewController () <UITextFieldDelegate>
@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
 	[self.view setBackgroundColor:[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"register-background.png"]]];
-	[self.onepasswordSignupButton setHidden:![[OnePasswordExtension sharedExtension] isAppExtensionAvailable]];
+	[self.onepasswordSignupButton setHidden:![[RSTOnePasswordExtension sharedExtension] isAppExtensionAvailable]];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
@@ -52,7 +52,7 @@
 		AppExtensionGeneratedPasswordMaxLengthKey: @(50)
 	};
 
-	OnePasswordExtension *onePasswordExtension = [OnePasswordExtension sharedExtension];
+	RSTOnePasswordExtension *onePasswordExtension = [RSTOnePasswordExtension sharedExtension];
 
 	// Create the 1Password extension item.
 	NSExtensionItem *extensionItem = [onePasswordExtension createExtensionItemToStoreLoginForURLString:@"https://www.acme.com" loginDetails:newLoginDetails passwordGenerationOptions:passwordGenerationOptions];
